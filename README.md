@@ -30,12 +30,10 @@ submission_reminder_app_pdusenge/
    ```
 3. Run the environment setup script:
    ```bash
-   chmod +x create_environment.sh
    ./create_environment.sh
    ```
 4. Start the application:
    ```bash
-   chmod +x startup.sh
    ./startup.sh
    ```
 
