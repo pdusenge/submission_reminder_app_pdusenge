@@ -1,20 +1,16 @@
 #!/bin/bash
 
 # Prompt user for their name
-echo -n "Enter your name: "
-read user_name
+read -p  "Enter your name: " user_name
 
 # Set up the base directory with the user's name
 base_dir="submission_reminder_${user_name}"
 
-# Create the directory structure
+# Create the directory
 echo "Creating directory..."
-mkdir -p "$base_dir/app"
-mkdir -p "$base_dir/config"
-mkdir -p "$base_dir/modules"
-mkdir -p "$base_dir/assets"
+mkdir -p "$base_dir/app" "$base_dir/config" "$base_dir/modules" "$base_dir/assets"
 
-# Create reminder.sh
+# Creating reminder.sh
 echo "Creating reminder.sh..."
 cat << 'EOF' > "$base_dir/app/reminder.sh"
 #!/bin/bash
@@ -114,8 +110,6 @@ echo "Reminder app started successfully!"
 EOF
 
 # Set permissions to make scripts executable
-chmod +x "$base_dir/app/reminder.sh"
-chmod +x "$base_dir/modules/functions.sh"
-chmod +x "$base_dir/startup.sh"
+chmod +x "$base_dir/app/reminder.sh" "$base_dir/modules/functions.sh" "$base_dir/startup.sh"
 
-echo "Environment setup is complete!"
+echo "Env setup is complete!"
